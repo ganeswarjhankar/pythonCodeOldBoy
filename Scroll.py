@@ -18,6 +18,17 @@ driver.maximize_window()
 
 #driver.execute_script("window.scrollBy(0,3100)","")
 
+Appointment = driver.find_element(By.PARTIAL_LINK_TEXT,("Get a free second opinion from top surgeons! Book an appointment »")).click()
+driver.find_element(By.ID,"leadname2").send_keys("Form1_PatientName")
+driver.find_element(By.ID,"contactnum2").send_keys("7896544568")
+
+driver.find_element(By.ID,"leadquery").send_keys("Form1_PatientName is  test")
+
+
+time.sleep(5)
+
+
+
  #Scroll down page till the element is visible
 Consultation = driver.find_element(By.CLASS_NAME,"consultation-form")
 driver.execute_script("arguments[0].scrollIntoView();",Consultation)
