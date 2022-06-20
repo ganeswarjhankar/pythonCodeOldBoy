@@ -12,4 +12,4 @@ dropdown = Select().select_by_visible_text
 
 driver.close()
 
-#select * from
+#select * from check to push button
