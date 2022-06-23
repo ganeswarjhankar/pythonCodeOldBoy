@@ -3,6 +3,7 @@ from selenium.webdriver.chrome.service import Service
 
 from selenium .webdriver.common.by import By
 #from selenium.webdriver.support.ui import Select
+from selenium.common.exceptions.exceptions
 
 import time
 
@@ -17,12 +18,15 @@ driver.maximize_window()
 
 #driver.execute_script("window.scrollBy(0,3100)","")
 
-Appointment = driver.find_element(By.PARTIAL_LINK_TEXT,("Get a free second opinion from top surgeons! Book an appointment »")).click()
-driver.find_element(By.ID,"leadname2").send_keys("Form1_PatientName")
-driver.find_element(By.ID,"contactnum2").send_keys("7896544568")
+Appointment = driver.find_element(By.LINK_TEXT,("Get a free second opinion from top surgeons! Book an appointment »")).click()
+#driver.find_element(By.XPATH,"//*[@id='leadname2']").send_keys("Form1_PatientName")
+#driver.find_element(By.ID,"contactnum2").send_keys("7896544568")
 
+
+driver.switch_to.frame(driver.find_element(By.XPATH,"//*[@id='appointmodal']/div/div/div[2]"))
 driver.find_element(By.ID,"leadquery").send_keys("Form1_PatientName is  test")
 
+driver.find_element(By.XPATH,"//*[@id='closemodal']").click()
 
 time.sleep(5)
 
