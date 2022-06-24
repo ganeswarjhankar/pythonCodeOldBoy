@@ -6,3 +6,5 @@ from selenium.webdriver.support.ui import Select
 S = Service("D:\\chromedriver.exe")
 driver = webdriver.Chrome(service=S)
 
+
+Search = input("Enter the topic in the google for which you want to search")
