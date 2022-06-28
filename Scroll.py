@@ -43,9 +43,9 @@ driver.find_element(By.XPATH,"//*[@id='leadqueryhome']").send_keys("This is a Go
 time.sleep(5)
 #scroll
 BookNow = driver.find_element(By.ID,"LeadSubmitNewHome1")
-driver.execute_script("arguments[0].click();",BookNow)
+#driver.execute_script("arguments[0].click();",BookNow)
 time.sleep(5)
-driver.back()
+#driver.back()
 
 #driver.find_element(By.ID,"LeadSubmitNewHome1").click()
 
@@ -68,7 +68,7 @@ Consultation1 = driver.find_element(By.CLASS_NAME,"btn-round-primary")
 driver.execute_script("arguments[0].scrollIntoView();",Consultation1)
 
 driver.find_element(By.CSS_SELECTOR,"input[id='contactnum1']").send_keys("9438857617")
-driver.find_element(By.XPATH,"//*[@id='LeadSubmit1']")
+#driver.find_element(By.XPATH,"//*[@id='LeadSubmit1']")
 
 
 #Delhi=driver.find_element(By.CSS_SELECTOR,"input[text=' Delhi - NCR']")
@@ -76,7 +76,14 @@ driver.find_element(By.XPATH,"//*[@id='LeadSubmit1']")
 time.sleep(5)
 
 
-driver.close()
+driver.find_element(By.CLASS_NAME,"btn-round-primary").click()
+
+
+#driver.close()
+
+
+# New Tab Open up Hexahealth.com
+
 
 
 
