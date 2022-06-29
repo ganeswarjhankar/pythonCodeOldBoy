@@ -1,8 +1,9 @@
 class calculator:
-    num = 100
+    num = 100 # class variables
 
 # default Constructors
-
+#constructor name is __init__(self):
+# instance variable firstnumber and Secondnumber
     def __init__(self,a,b):
         self.firstnumber= a
         self.secondnumber= b
@@ -13,6 +14,8 @@ class calculator:
         print("Now i am executing as methods in class")
 
     def summation(self):
+
+    return self.firstnumber + self.secondnumber
 
 
 
