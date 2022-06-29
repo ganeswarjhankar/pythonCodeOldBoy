@@ -14,8 +14,7 @@ class calculator:
         print("Now i am executing as methods in class")
 
     def summation(self):
-
-    return self.firstnumber + self.secondnumber
+        return self.firstnumber + self.secondnumber + calculator.num
 
 
 
