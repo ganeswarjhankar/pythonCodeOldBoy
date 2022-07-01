@@ -1,5 +1,5 @@
-apple
-ball
-cat
-dog
 elephant
+dog
+cat
+ball
+apple
