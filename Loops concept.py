@@ -1,4 +1,23 @@
 ##greeting = "goodmorning"
+greeting = "good morning"
+if greeting == "morning"
+    print("Check 1")
+    print("Check 2")
+else:
+    print("condition do not match")
+
+
+
+
+
+
+
+
+
+
+
+
+
 ##a = 4
 ##if a > 2:
    ## print("condition matches")
