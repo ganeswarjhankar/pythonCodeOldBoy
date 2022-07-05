@@ -23,11 +23,13 @@ driver.maximize_window()
 driver.find_element(By.CLASS_NAME,"form-control").send_keys("GJ Test AUTOMATE")
 
 driver.find_element(By.ID,"contactnum5").send_keys("9438857617")
-driver.find_element(By.CSS_SELECTOR,"option[value='1']").click()
+##driver.find_element(By.CSS_SELECTOR,"option[value='1']").click()
+
+
 time.sleep(3)
 driver.close()
 
-Driver.execute_script(“arguments[0].scrollIntoView();”,)
+##Driver.execute_script(“arguments[0].scrollIntoView();”,)
 
 
 
