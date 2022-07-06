@@ -20,13 +20,33 @@ driver.maximize_window()
 #driver.execute_script("window.scrollBy(0,3100)","")
 
 Appointment = driver.find_element(By.LINK_TEXT,("Get a free second opinion from top surgeons! Book an appointment »")).click()
-driver.switch_to.frame("modal-header")
 
-print(driver.find_element(By.TAG_NAME,"Free Appointment").text)
+driver.switch_to.window("Free Appointment")
 
-driver.find_element(By.XPATH,"//body/div[@id='appointmodal']/div[1]/div[1]/div[1]/button[1]/span[1]").click()
-print("Appointment")
-action.move_to_element(By.XPATH,"//*[@id='closemodal']").click().perform()
+driver.find_element(By.ID,"closemodal").click()
+#print(driver.find_element(By.ID,"appointmodal").text)
+
+
+
+#print(driver.find_element(By.ID,"appointmodal").text)
+
+
+#print(driver.find_element(By.TAG_NAME,"Free Appointment").text)
+
+
+driver.find_element(By.XPATH,"//*[@id='leadname2]").send_keys("Check")
+#driver.switch_to.window(windowsOpened[0])
+#driver.find_element(By.TAG_NAME, "h3").text
+#assert "Opening a new window" == driver.find_element(By.TAG_NAME,"h3").text
+
+
+
+
+
+#driver.find_element(By.XPATH,"//body/div[@id='appointmodal']/div[1]/div[1]/div[1]/button[1]/span[1]").click()
+#print("Appointment")
+
+#a#ction.move_to_element(By.XPATH,"//*[@id='closemodal']").click().perform()
 
 
 #driver.find_element(By.XPATH,"//*[@id='leadname2']").send_keys("Form1_PatientName")
