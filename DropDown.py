@@ -1,15 +1,22 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-#from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.by import By
 
-S = Service("D:\\chromedriver.exe")
+S = Service("d:/chromedriver.exe")
 driver = webdriver.Chrome(service=S)
+
+
 driver.get("https://www.rahulshettyacademy.com/angularpractice/")
 
-#control = driver.find_element(By.CLASS_NAME, "form-control")
-#dropdown = Select().select_by_visible_text
+dropdown = Select(driver.find_element(By.ID,"exampleFormControlSelect1"))
+dropdown.select_by_visible_text("Female")
+
+driver.close()
+
+# select by value
+#dropdown.select_by_value('1')
+
 
 
 
@@ -17,9 +24,8 @@ driver.get("https://www.rahulshettyacademy.com/angularpractice/")
 
 #static dropdown
 
-dropdown = Select(driver.find_element(By.ID,"exampleFormControlSelect1"))
-dropdown.select_by_visible_text("Male")
-dropdown.select_by_visible_text("Female")
+#dropdown.select_by_visible_text("Male")
+#dropdown.select_by_visible_text("Female")
  
 
 

@@ -20,6 +20,7 @@ driver.close()
 driver = webdriver.Chrome(executable_path="D:\\chromedriver.exe")
 driver.get("https://hexahealth.com/campaigns/varicoseveins")
 driver.maximize_window()
+
 driver.find_element(By.CLASS_NAME,"form-control").send_keys("GJ Test AUTOMATE")
 
 driver.find_element(By.ID,"contactnum5").send_keys("9438857617")

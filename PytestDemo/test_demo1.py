@@ -335,15 +335,26 @@ def test_3rdPrdogram():
 
 
 # Any pytest file should start with test_ format and end with _test
+#method name should have sense
+#-k stands for method names execution,
+#-s logs in the out put
+#-v stands for metadata
+#You can run specific file with py.test <fielname>
+#you can mark (tag)tests @pytest.mark.smoke and then run with -m
+#you can skip with @pytest.mark.skip
+
+import pytest
 
 
+@pytest.mark.smoke
+@pytest.mark.skip
 def test_firstprdogram():
     print("My_Home_is_ checked and Far")
 
 
-def test_2ndprogdsram():
+def test_2ndprogram():
     print("How are you")
 
 
-def tewst_3rdPrewogram():
+def test_CreditcardProgram():
     print(("How the RUN speed"))

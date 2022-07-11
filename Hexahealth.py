@@ -18,7 +18,8 @@ driver.find_element_by_xpath("//body/app-root[1]/form-comp[1]/div[1]/form[1]/div
 driver.find_element_by_xpath("//input[@id='exampleInputPassword1']").send_keys("Test Successful")
 driver.find_element_by_xpath("//input[@id='exampleCheck1']").send_keys("Teste")
 driver.find_element_by_xpath("//input[@id='inlineRadio1']").send_keys("Test Susful")
-#driver.find_element_by_xpath("//input[@id='inlineRadio2']").send_keys("Tt Successful")
+
+driver.find_element_by_xpath("//option[@value='1']").click()
 #driver.find_element_by_xpath("//input[@id='inlineRadio3']").send_keys("TeSuccessful")
 driver.find_element_by_xpath("//input[@type='submit']").click()
 
