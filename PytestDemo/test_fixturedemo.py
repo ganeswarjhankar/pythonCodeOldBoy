@@ -7,5 +7,16 @@ def setup():
     yield
     print("I will execute last after field")
 
-def test_fixtureDemo(setup):
-    print("i will be executing steps in fixturedemo method")
+
+@pytest.mark.usefixtures("setup")
+class TestExample:
+
+    def test_fixtureDemo1(self):
+        print("i will be executing steps in fixturedemo method")
+    def test_fixtureDemo2(self):
+        print("i will be executing steps in fixturedemo method")
+
+    def test_fixtureDemo3(self):
+        print("i will be executing steps in fixturedemo method")
+
+

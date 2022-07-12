@@ -36,5 +36,5 @@ driver.find_element(By.XPATH,"//input[@id='BasicInfo_AddressLine2']").send_keys(
 
 
 
-driver.close()
+#driver.close()
 

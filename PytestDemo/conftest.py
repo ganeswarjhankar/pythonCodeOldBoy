@@ -1,10 +1,13 @@
 import pytest
 
-
-@pytest.fixture
-
+@pytest.fixture(scope="class")
 def setup():
-    print("I will be executing first")
+    print("i will be executing first")
     yield
-    print("I will be executing last")
+    print("i will be execute last")
+
+@pytest.fixture()
+def dataLoad():
+    print("user profiler data is being created")
+    return ["Rahul","Ganeswar","Jhankar.com"]
 

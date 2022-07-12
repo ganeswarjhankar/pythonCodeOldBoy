@@ -1,27 +1,54 @@
-
 from selenium import webdriver
-#brower exposes and executable file
-#through selenium test we need to invoke the executable file which will then Invoke actual Browser
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.chrome.service import Service
+
+from selenium .webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.action_chains import ActionChains
 
 
+import time
 
-driver = webdriver.Chrome(executable_path="D:\\chromedriver.exe")
+S=Service("D:\\chromedriver.exe")
+driver=webdriver.Chrome(service=S)
+
+
+URL=driver.get("https://www.hexahealth.com/")
+
 driver.maximize_window()
-driver.get("https://rahulshettyacademy.com/angularpractice//") #get method to hit url on browser
-print(driver.title)
-print(driver.current_url)
 
-driver.find_element_by_css_selector("input[name='name']").send_keys("Test Successful")
-driver.find_element_by_xpath("//body/app-root[1]/form-comp[1]/div[1]/form[1]/div[2]/input[1]").send_keys("Test ")
-driver.find_element_by_xpath("//input[@id='exampleInputPassword1']").send_keys("Test Successful")
-driver.find_element_by_xpath("//input[@id='exampleCheck1']").send_keys("Teste")
-driver.find_element_by_xpath("//input[@id='inlineRadio1']").send_keys("Test Susful")
 
-driver.find_element_by_xpath("//option[@value='1']").click()
-#driver.find_element_by_xpath("//input[@id='inlineRadio3']").send_keys("TeSuccessful")
-driver.find_element_by_xpath("//input[@type='submit']").click()
+driver.find_element(By.LINK_TEXT,("Get a free second opinion from top surgeons! Book an appointment »")).click()
+
+driver.implicitly_wait(10)
+
+driver.find_element(By.XPATH,"//input[@id='leadname2']").send_keys("Patient test Name check")
+
+driver.find_element(By.XPATH,"//input[@id='contactnum2']").send_keys("1000000001")
+
+City = Select(driver.find_element(By.XPATH,"//select[@id='leadcity2']"))
+City.select_by_visible_text( "Delhi - NCR")
+driver.find_element(By.XPATH,"//textarea[@id='leadquery']").send_keys("test check")
+
+#driver.find_element(By.XPATH,"//button[@id='LeadSubmitNewHome']").send_keys("Submit check")
+
+
+time.sleep(3)
+driver.find_element(By.XPATH,"//button[@id='closemodal']").click()
+#driver.back()
+
+
+
+driver.find_element(By.XPATH,"//input[@id='leadnamehome']").send_keys("Fold-2 Test Check" )
+driver.find_element(By.XPATH,"//input[@id='contactnumhome']").send_keys("1000000001")
+
+City2 = Select(driver.find_element(By.XPATH,"//select[@id='leadcityhome']"))
+City2.select_by_visible_text("Delhi - NCR")
+
+driver.find_element(By.XPATH,"//textarea[@id='leadqueryhome']").send_keys("test checck")
+
+
+driver.find_element(By.XPATH,"//i[@class='las la-bars mobile-navigation']").click()
+
 
 
 #print(driver.find_elements_by_class_name("alert alert-success alert-dismissible").text)

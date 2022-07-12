@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
 from selenium .webdriver.common.by import By
-#from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
 
 
@@ -13,28 +13,48 @@ driver=webdriver.Chrome(service=S)
 
 
 URL=driver.get("https://www.hexahealth.com/")
-print("URL")
+
 driver.maximize_window()
 #scroll down for Pixel Method
 
 #driver.execute_script("window.scrollBy(0,3100)","")
 
-Appointment = driver.find_element(By.LINK_TEXT,("Get a free second opinion from top surgeons! Book an appointment »")).click()
+driver.find_element(By.LINK_TEXT,("Get a free second opinion from top surgeons! Book an appointment »")).click()
 
-driver.switch_to.window("Free Appointment")
+driver.implicitly_wait(10)
 
-driver.find_element(By.ID,"closemodal").click()
-#print(driver.find_element(By.ID,"appointmodal").text)
+driver.find_element(By.XPATH,"//input[@id='leadname2']").send_keys("Patient test Name check")
+
+driver.find_element(By.XPATH,"//input[@id='contactnum2']").send_keys("1000000001")
+
+City = Select(driver.find_element(By.XPATH,"//select[@id='leadcity2']"))
+City.select_by_visible_text( "Delhi - NCR")
+#driver.find_element(By.XPATH,"//button[@id='LeadSubmitNewHome']").send_keys("Submit check")
+
+
+time.sleep(3)
+driver.find_element(By.XPATH,"//button[@id='closemodal']").click()
+#driver.back()
 
 
 
-#print(driver.find_element(By.ID,"appointmodal").text)
+driver.find_element(By.XPATH,"//input[@id='leadnamehome']").send_keys("Fold-2" )
+driver.find_element(By.XPATH,"//input[@id='contactnumhome']").send_keys("1000000001")
+
+City2 = Select(driver.find_element(By.XPATH,"//select[@id='leadcityhome']"))
+City2.select_by_visible_text("AGRA")
+
+driver.find_element(By.XPATH,"//textarea[@id='leadqueryhome']").send_keys("test checck")
+
+
+
+
 
 
 #print(driver.find_element(By.TAG_NAME,"Free Appointment").text)
 
 
-driver.find_element(By.XPATH,"//*[@id='leadname2]").send_keys("Check")
+#driver.find_element(By.XPATH,"//*[@id='leadname2]").send_keys("Check")
 #driver.switch_to.window(windowsOpened[0])
 #driver.find_element(By.TAG_NAME, "h3").text
 #assert "Opening a new window" == driver.find_element(By.TAG_NAME,"h3").text
