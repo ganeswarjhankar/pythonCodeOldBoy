@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.service import Service
 
 from selenium .webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver.common.action_chains import ActionChains
+#from selenium.webdriver.common.action_chains import ActionChains
 
 
 import time
@@ -23,23 +23,25 @@ driver.implicitly_wait(10)
 
 driver.find_element(By.XPATH,"//input[@id='leadname2']").send_keys("Patient test Name check")
 
-driver.find_element(By.XPATH,"//input[@id='contactnum2']").send_keys("1000000001")
+driver.find_element(By.XPATH,"//input[@id='contactnum2']").send_keys("1000000456")
 
 City = Select(driver.find_element(By.XPATH,"//select[@id='leadcity2']"))
 City.select_by_visible_text( "Delhi - NCR")
 driver.find_element(By.XPATH,"//textarea[@id='leadquery']").send_keys("test check")
 
-#driver.find_element(By.XPATH,"//button[@id='LeadSubmitNewHome']").send_keys("Submit check")
+driver.find_element(By.XPATH,"//button[@id='LeadSubmitNewHome']").click()
 
 
-time.sleep(3)
+
 driver.find_element(By.XPATH,"//button[@id='closemodal']").click()
-#driver.back()
+time.sleep(3)
+
+driver.back()
 
 
 
 driver.find_element(By.XPATH,"//input[@id='leadnamehome']").send_keys("Fold-2 Test Check" )
-driver.find_element(By.XPATH,"//input[@id='contactnumhome']").send_keys("1000000001")
+driver.find_element(By.XPATH,"//input[@id='contactnumhome']").send_keys("1000000610")
 
 City2 = Select(driver.find_element(By.XPATH,"//select[@id='leadcityhome']"))
 City2.select_by_visible_text("Delhi - NCR")
@@ -47,7 +49,27 @@ City2.select_by_visible_text("Delhi - NCR")
 driver.find_element(By.XPATH,"//textarea[@id='leadqueryhome']").send_keys("test checck")
 
 
-driver.find_element(By.XPATH,"//i[@class='las la-bars mobile-navigation']").click()
+#driver.find_element(By.XPATH,"//i[@class='las la-bars mobile-navigation']").click()
+
+#driver.find_element(By.XPATH,"//a[@id='parentheader_2']").click()
+
+button = driver.find_element(By.XPATH,"//button[@id='LeadSubmitNewHome1']")
+driver.execute_script("arguments[0].click();", button)
+time.sleep(5)
+driver.back()
+
+
+
+driver.find_element(By.XPATH,"//input[@id='contactnum1']").send_keys("1000000195")
+Callbutton = driver.find_element(By.XPATH,"//button[@id='LeadSubmit1']")
+driver.execute_script("arguments[0].click();", Callbutton)
+driver.find_element(By.XPATH,"//button[@id='LeadSubmit1']").click()
+#driver.back()
+
+
+
+
+#driver.find_element(By.ID,"LeadSubmitNewHome1" ).click()
 
 
 
