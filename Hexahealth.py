@@ -19,19 +19,17 @@ driver.maximize_window()
 
 driver.find_element(By.LINK_TEXT,("Get a free second opinion from top surgeons! Book an appointment »")).click()
 
-driver.implicitly_wait(10)
+time.sleep(5)
 
 driver.find_element(By.XPATH,"//input[@id='leadname2']").send_keys("Patient test Name check")
 
-driver.find_element(By.XPATH,"//input[@id='contactnum2']").send_keys("1000000456")
+driver.find_element(By.XPATH,"//input[@id='contactnum2']").send_keys("1000000011")
 
 City = Select(driver.find_element(By.XPATH,"//select[@id='leadcity2']"))
 City.select_by_visible_text( "Delhi - NCR")
 driver.find_element(By.XPATH,"//textarea[@id='leadquery']").send_keys("test check")
 
 driver.find_element(By.XPATH,"//button[@id='LeadSubmitNewHome']").click()
-
-
 
 driver.find_element(By.XPATH,"//button[@id='closemodal']").click()
 time.sleep(3)
@@ -41,7 +39,7 @@ driver.back()
 
 
 driver.find_element(By.XPATH,"//input[@id='leadnamehome']").send_keys("Fold-2 Test Check" )
-driver.find_element(By.XPATH,"//input[@id='contactnumhome']").send_keys("1000000610")
+driver.find_element(By.XPATH,"//input[@id='contactnumhome']").send_keys("1000000111")
 
 City2 = Select(driver.find_element(By.XPATH,"//select[@id='leadcityhome']"))
 City2.select_by_visible_text("Delhi - NCR")
@@ -60,7 +58,7 @@ driver.back()
 
 
 
-driver.find_element(By.XPATH,"//input[@id='contactnum1']").send_keys("1000000195")
+driver.find_element(By.XPATH,"//input[@id='contactnum1']").send_keys("1000000221")
 Callbutton = driver.find_element(By.XPATH,"//button[@id='LeadSubmit1']")
 driver.execute_script("arguments[0].click();", Callbutton)
 driver.find_element(By.XPATH,"//button[@id='LeadSubmit1']").click()
