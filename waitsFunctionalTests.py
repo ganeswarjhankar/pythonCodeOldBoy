@@ -14,23 +14,19 @@ driver=webdriver.Chrome(service=S)
 
 
 driver.get("https://rahulshettyacademy.com/seleniumPractise/#/")
-#driver.get("https://www.hexahealth.com/")
+
 driver.maximize_window()
 driver.find_element(By.XPATH,"//input[@type='search']").send_keys("berr")
 time.sleep(5)
 
-#results = driver.find_elements("//input[@id='txtArticls']")
+
 
 results = driver.find_elements(By.XPATH,"//div[@class='products']/div")
 #results = driver.find_elements((By.XPATH,"(//div[@class='products'])[1]"))
 
 count = len(results)
-
-
-
-
-
 assert count > 0
+
 
 
 

@@ -1,13 +1,8 @@
+from logging import exception
+ItemIncart = 0
+if ItemIncart != 2:
+    #raise exception("Check the value of simple Value")
+    pass
+assert(ItemIncart==0)
 
-values = [1, 2, "rahul" , 4, 5]
-print(values[-1])
 
-dic = {"a": 2, 4: "bcd" , "c": "Hello wolrd"}
-print(dic[4])
-print(dic["c"])
-
-dict = {}
-dict["firstname"] = "Lucky"
-dict["lastname"] = "Jhankar"
-print(dict)
-print(dict["lastname"])
