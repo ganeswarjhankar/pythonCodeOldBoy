@@ -21,18 +21,21 @@ driver.maximize_window()
 
 driver.find_element(By.XPATH,"//input[@id='txtArticls']").send_keys("Anu Jain")
 time.sleep(3)
+#find the desired doctors as below
 doctors = driver.find_elements(By.XPATH,"//li[@name='5articleIndex']")
 
 time.sleep(5)
 
-for anu in doctors:
-    if anu.text=="Anu Jain":
-        anu.click()
-        break
-value = driver.find_element(By.XPATH,"//input[@id='txtArticls']").get_attribute('value')
-print(value)
+#for i in doctors:
+    #if i.text=="Anu Jain":
+        #i.click()
+        #break
 
-assert value == "Anu Jain"
+driver.find_element(By.XPATH,"//*[@id='uldisease']/li[2]/a").click()
+#value = driver.find_element(By.XPATH,"//input[@id='txtArticls']").get_attribute('value')
+#print(value)
+
+#assert value == "Anu Jain"
 
 
 
