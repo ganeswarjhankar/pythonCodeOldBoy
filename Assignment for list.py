@@ -3,7 +3,8 @@ from selenium.webdriver.chrome.service import Service
 
 from selenium.webdriver.common.by import By
 
-Expected list = ["Cucumber - 1 Kg","Raspberry - 1/4 Kg","Strawberry - 1/4 Kg"]
+Expectedlist = ["Cucumber - 1 Kg","Raspberry - 1/4 Kg","Strawberry - 1/4 Kg"]
+
 
 
 import time
@@ -22,3 +23,18 @@ driver.get("https://rahulshettyacademy.com/seleniumPractise/#/")
 driver.maximize_window()
 driver.find_element(By.XPATH, "//input[@type='search']").send_keys("ber")
 time.sleep(2)
+
+AddToCart = driver.find_elements(By.XPATH,"//div[@class='product-action']")
+
+count = len(AddToCart)
+
+assert count > 0
+
+for Cart in AddToCart:
+    Cart.find_element(By.XPATH,"div/button").click()
+
+print(count)
+
+
+
+

@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
 from selenium.webdriver.common.by import By
-# from selenium.webdriver.support.ui import Select
+from selenium.webdriver.support.ui import Select
 # from selenium.webdriver.common.action_chains import ActionChains
 
 
@@ -67,6 +67,21 @@ wait = WebDriverWait(driver, 10)
 wait.until(expected_conditions.presence_of_element_located((By.CLASS_NAME, "promoInfo")))
 
 print(code.text)
+
+driver.find_element(By.XPATH,"/html/body/div/div/div/div/div/button").click()
+
+dropdown = driver.find_element(By.XPATH,"/html/body/div/div/div/div/div/div/select")
+dropdownCountry = Select(dropdown)
+#dropdownCountry.select_by_visible_text("Afghanistan")
+#dropdownCountry.select_by_index()
+dropdownCountry.select_by_value("Afghanistan")
+driver.find_element(By.XPATH,"//input[@type='checkbox']").click()
+time.sleep(3)
+driver.find_element(By.XPATH,"/html/body/div/div/div/div/div/button").click()
+
+
+
+
 
 
 
