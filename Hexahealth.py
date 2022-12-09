@@ -45,24 +45,11 @@ driver.back()
 
 
 
+
+
 driver.find_element(By.XPATH,"//input[@id='contactnum1']").send_keys("1000009848")
 Callbutton = driver.find_element(By.XPATH,"//button[@id='LeadSubmit1']")
 driver.execute_script("arguments[0].click();", Callbutton)
-
-#driver.close()
-#driver.find_element(By.XPATH,"//button[@id='LeadSubmit1']").click()
-#driver.back()
-#driver.find_element(By.ID,"LeadSubmitNewHome1" ).click()
-#print(driver.find_elements_by_class_name("alert alert-success alert-dismissible").text)
-##login_form = driver.find_element(By.XPATH, "/html/body/form[1]")
-##wait = WebDriverWait(driver, 100)
-#driver.implicitly_wait(10)
-#driver.back()
-##driver.close()
-#driver.back()
-#driver.refresh()
-#wait = WebDriverWait(driver, 110)
-#driver.close()
 
 
 

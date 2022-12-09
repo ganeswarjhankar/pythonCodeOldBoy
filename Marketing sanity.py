@@ -38,7 +38,9 @@ driver.refresh()
 Insurance = driver.find_element(By.XPATH,"//*[@id='insurancetBtn']/span/strong")
 driver.execute_script("arguments[0].click();", Insurance)
 driver.find_element(By.XPATH,"//*[@id='leadname2']").send_keys("Test Insurance check sanity")
-driver.find_element(By.XPATH,"//*[@id='contactnum2']").send_keys("1000000082")
+driver.find_element(By.XPATH,"//*[@id='contactnum2']").send_keys(""
+                                                                 ""
+                                                                 "")
 driver.find_element(By.XPATH,"//*[@id='LeadSubmit2']").click()
 time.sleep(5)
 driver.back()
